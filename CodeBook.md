@@ -1,4 +1,4 @@
-## Codebook for data from the Getting and Cleaning Data Assignment
+## Codebook for the Getting and Cleaning Data Assignment
 |                |                                                          |
 |----------------|----------------------------------------------------------|
 |**Author:**     | Brian von Konsky
