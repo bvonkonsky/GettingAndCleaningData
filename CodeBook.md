@@ -28,7 +28,7 @@ The cleaned data exists in two Comma Separated Value (CSV) files.  The first CSV
 
 All units in the cleaned data are the same as those used in the original data.
 
-|Column| Variable                                  | definition                                                     |
+|Column| Variable                                  | Definition                                                     |
 |------|:------------------------------------------|:---------------------------------------------------------------|
 |1     |SubjectID                                  | Unique integer referring to individual study participants.  Ranges between 1 and 30.
 |2     |Activity                                   | Factor variable describing the activity being measured. One of: WALKING, WALKING\_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING.
