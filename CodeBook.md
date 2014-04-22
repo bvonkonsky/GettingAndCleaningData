@@ -20,8 +20,8 @@ The cleaned version of the data only retains original variables that ended in *m
 
 The cleaned version of the data follows the four principles of a Tidy Dataset as described by [Jeff Leek](http://biostat.jhsph.edu/~jleek/) and the Leek Group in their document on [datasharing](https://github.com/jtleek/datasharing). Specifically:
 * each variable is in its own column;
-* each observation is contained in a single row, in this case labeled by subject ID and the activity the subject was engaging in at the time of the measurement;
-* there is one table for each kind of measurement; and
+* each observation is contained in a single row, in this case labeled by subject ID and the activity that the subject was engaged in at the time of the measurement;
+* one table for each kind of measurement; and
 * multiple tables are readily linked, in this case, by subject ID and activity.
 
 All units in the cleaned data are the same as those used in the original data.
