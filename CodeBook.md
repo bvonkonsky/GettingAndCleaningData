@@ -1,6 +1,5 @@
 ## Codebook for Getting and Cleaning Data assignment
-
-| Codebook Info  |                                                          |
+|Provenance      |                                                   |
 |----------------|----------------------------------------------------------|
 |**Author:**     | Brian von Konsky
 |**Created:**    | April 2013
@@ -15,7 +14,7 @@ Papers arising from the original or cleaned data should reference:
 
 The original data were downloaded and subsequently cleaned using an [R script](http://www.r-project.org/) called [run_analysis.R](https://github.com/bvonkonsky/GettingAndCleaningData/blob/master/run_analysis.R).
 
-The cleaned version merges the training and test data from the original study, and uses arguably more meaningful variable names, which are described in the table below. For example, occurrences of **Mag** were changed to **Magnitude**, **Acc** to **Accelerate**, and **std** to **stddev**.  The **t** variable prefixes for **time** and **f** prefixes for **frequency domain** at the beginning of variable were retained to avoid making variable names too unwieldy. A small modification to the script could easily expand this if desired.  
+The cleaned version merges the training and test data from the original study, and uses arguably more meaningful variable names, which are described in the table below. For example, occurrences of **Mag** were changed to **Magnitude**, **Acc** to **Accelerate**, and **std** to **stddev**. The **t** prefixes for **time** and **f** prefixes for **frequency domain** at the beginning of variable names were retained to avoid making them too unwieldy. A small modification to the script could easily expand this if desired.  
 
 The cleaned version of the data only retains original variables that ended in *mean()* or *std()*.  Variables that included *mean* or *std* elsewhere in the variable name or that did not contain it at all were intentionally dropped from the cleaned data set.
 
