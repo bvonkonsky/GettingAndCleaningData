@@ -1,5 +1,5 @@
 ## Codebook for Getting and Cleaning Data assignment
-|Provenance      |                                                   |
+|                |                                                          |
 |----------------|----------------------------------------------------------|
 |**Author:**     | Brian von Konsky
 |**Created:**    | April 2013
