@@ -24,7 +24,7 @@ The cleaned version of the data follows the four principles of a Tidy Dataset as
 * one table for each kind of measurement, in this case measurements taken using Samsung mobile devices recorded while subjects were engaged in various activities; and
 * multiple tables are readily linked, in this case, by subject ID and activity.
 
-The cleaned and tidy data exists in two Comma Separated Value (CSV) files.  The [first CSV file](https://www.dropbox.com/s/8a5fmarat30p01b/tidyMerged.csv) contains merged training and test data.  The [second CSV file](https://www.dropbox.com/s/2ck82baeuyjceg8/tidyAveraged.csv) contains the average of all observations for a given subject and activity.
+The [run_analysis.R](https://github.com/bvonkonsky/GettingAndCleaningData/blob/master/run_analysis.R) script produces cleaned and tidy data in two Comma Separated Value (CSV) files.  The [first CSV file](https://www.dropbox.com/s/8a5fmarat30p01b/tidyMerged.csv) contains merged training and test data.  The [second CSV file](https://www.dropbox.com/s/2ck82baeuyjceg8/tidyAveraged.csv) contains the average of all observations for a given subject and activity.
 
 All units in the cleaned data are the same as those used in the original data.
 
