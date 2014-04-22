@@ -16,6 +16,8 @@ The cleaned version of the data follows the four principles of a Tidy Dataset as
 * there is one table for each kind of measurement; and
 * multiple tables are readily linked, in this case, by subject ID and activity.
 
+All units in the cleaned data are the same as those used in the original data.
+
 The cleaned data exists in two Comma Separated Value (CSV) files.  The first CSV file contains data for each observation, whereas the second contains the average of all observations for a given subject and activity.
 
 
