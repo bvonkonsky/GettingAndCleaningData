@@ -4,7 +4,7 @@ Papers arising from the original or cleaned data should reference:
 
 Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. Human Activity Recognition on Smartphones using a Multiclass Hardware-Friendly Support Vector Machine. _International Workshop of Ambient Assisted Living (IWAAL 2012)_. Vitoria-Gasteiz, Spain. Dec 2012.
 
-The original data was downloaded and subsequently cleaned running an [R script](http://www.r-project.org/) called [run_analysis.R](https://github.com/bvonkonsky/GettingAndCleaningData/blob/master/run_analysis.R)
+The original data was downloaded and subsequently cleaned running an [R script](http://www.r-project.org/) called [run_analysis.R](https://github.com/bvonkonsky/GettingAndCleaningData/blob/master/run_analysis.R).
 
 The cleaned version merges the training and test data from the original study, and uses arguably more meaningful variable names which are described in the table below. For example, **Mag** was changed **Magnitude**, **Acc** was changed to **Accelerate**, and **std** was changed to **stddev**. The *t* variable prefix for *time* and *f* prefix for *frequency domain* at the beginning of each variable name was retained to avoid making the names too unwieldy. A small modification to the script could easily expand this if desired.  
 
