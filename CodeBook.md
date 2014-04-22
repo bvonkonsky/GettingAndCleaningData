@@ -1,12 +1,12 @@
-The [original data](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip) for this data cleaning assignment was produced by Jorge L. Reyes-Ortiz, Alessandro Ghio, Luca Oneto, and Davide Anguita.  More information about the data and the study that produced it is available on the [UCI Machine Learning Repository](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones).
+The [original data](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip) for this data cleaning assignment wer produced by Jorge L. Reyes-Ortiz, Alessandro Ghio, Luca Oneto, and Davide Anguita.  More information about the data and the study that produced it is available on the [UCI Machine Learning Repository](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones).
 
 Papers arising from the original or cleaned data should reference:
 
 >Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. Human Activity Recognition on Smartphones using a Multiclass Hardware-Friendly Support Vector Machine. _International Workshop of Ambient Assisted Living (IWAAL 2012)_. Vitoria-Gasteiz, Spain. Dec 2012.
 
-The original data was downloaded and subsequently cleaned running an [R script](http://www.r-project.org/) called [run_analysis.R](https://github.com/bvonkonsky/GettingAndCleaningData/blob/master/run_analysis.R).
+The original data were downloaded and subsequently cleaned using an [R script](http://www.r-project.org/) called [run_analysis.R](https://github.com/bvonkonsky/GettingAndCleaningData/blob/master/run_analysis.R).
 
-The cleaned version merges the training and test data from the original study, and uses arguably more meaningful variable names which are described in the table below. For example, occurrences of **Mag** were changed to **Magnitude**, **Acc** to **Accelerate**, and **std** to **stddev**.  The *t* variable prefixes for *time* and the *f* prefixes for *frequency domain* at the beginning of variable were retained to avoid making variable names too unwieldy. A small modification to the script could easily expand this if desired.  
+The cleaned version merges the training and test data from the original study, and uses arguably more meaningful variable names, which are described in the table below. For example, occurrences of **Mag** were changed to **Magnitude**, **Acc** to **Accelerate**, and **std** to **stddev**.  The *t* variable prefixes for *time* and *f* prefixes for *frequency domain* at the beginning of variable were retained to avoid making variable names too unwieldy. A small modification to the script could easily expand this if desired.  
 
 The cleaned version of the data only retains original variables that ended in *mean()* or *std()*.  Variables that included *mean* or *std* elsewhere in the variable name or that did not contain it at all were intentionally dropped from the cleaned data set.
 
