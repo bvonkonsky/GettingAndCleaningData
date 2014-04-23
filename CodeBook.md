@@ -1,4 +1,4 @@
-## CodeBook - Getting and Cleaning Data Assignment
+### CodeBook - Getting and Cleaning Data Assignment
 |**Author:**     |Brian von Konsky                                        |
 |:---------------|:-------------------------------------------------------|
 |**Created:**    | April 2014
