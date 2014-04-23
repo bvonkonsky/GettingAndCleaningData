@@ -1,6 +1,7 @@
 ### README.md for run_analysis.R
-|**Author:**     |Brian von Konsky                                        |
+|                |                                                        |
 |:---------------|:-------------------------------------------------------|
+|**Author:**     | Brian von Konsky
 |**Created:**    | April 2014
 |**Course:**     | Getting and Cleaning Data
 |**Repository:** | [https://github.com/bvonkonsky/GettingAndCleaningData](https://github.com/bvonkonsky/GettingAndCleaningData)
