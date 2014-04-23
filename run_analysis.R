@@ -12,7 +12,7 @@ getActivityLabels <- function() {
   return (activityLabels)
 }
 
-## Return a list of Subjects IDs for each record in the set
+## Return a list of Subjects IDs for each observation in the set
 getSubjectIDs <- function(fileName) {
   subjectIDs <- read.table(fileName)
   names(subjectIDs) <- "SubjectID"
@@ -20,7 +20,7 @@ getSubjectIDs <- function(fileName) {
   return (subjectIDs)
 }
 
-## Return the activities asscoiated with each record in the set
+## Return the activities asscoiated with each observation in the set
 getActivities <- function(fileName) {
   
   ## Get the list of valid activities
@@ -43,15 +43,15 @@ getData <- function(fileName) {
   names(featureTable) <- c("FeatureIndex", "Feature")
   features <- featureTable$Feature
   
-  ## Read the header and set the names for each attribute
+  ## Read the raw data and set the names for each attribute
   data <- read.table(fileName)
   names(data) <- features
-  
+
   ## Keep rows that end in mean() or std() and drop the others
   rexpr <- "(mean|std)\\(\\)$"
   keep <- grepl(rexpr, features)
   data <- data[keep]
-  
+
   ## Clean the attribute names to make them more readable
   theNames <- names(data)
   theNames <- sub("\\(\\)$","", theNames)          ## Get rid of the training pair of parenthesis
@@ -59,7 +59,7 @@ getData <- function(fileName) {
   theNames <- sub("Acc", "Acceleration", theNames) ## Change Acc to Acceleration
   theNames <- sub("std", "stddev", theNames)       ## Change std to stddev
   names(data) <- sub("\\(\\)$","", theNames)
-  
+
   return(data)
 }
 
@@ -70,7 +70,7 @@ getAndClean <- function(subjectsFilename, labelsFilename, dataFilename) {
   subjectIDs <- getSubjectIDs(subjectsFilename)
   activities <- getActivities(labelsFilename)
   data <- getData(dataFilename)
-  
+
   ## Combine all parts of the data frame for this set
   df <- data.frame(subjectIDs, activities, data)
   return (df)
@@ -82,7 +82,7 @@ averageTidy <- function(mergedDF) {
   # Get sorted list of all subjects and attribute name contained in the merged data frame
   subjectID <- sort(unique(mergedDF$SubjectID))
   theNames <- names(mergedDF)
-  
+
   # Get the labels used to describe activities
   activityLabels <- as.character(sort(getActivityLabels()))
   
