@@ -4,8 +4,8 @@
 
 ## Get a list of valid activity labels
 getActivityLabels <- function() {
-  ## Location of file giving mapping of label IDs to labels
-  labelFilename <- "UCI HAR Dataset/activity_labels.txt"
+  ## OS independent path to file mapping of label IDs to labels
+  labelFilename <- file.path("UCI HAR Dataset", "activity_labels.txt")
   labels <- read.table(labelFilename)
   names(labels) <- c("ActivityID", "Activity")
   activityLabels <- labels$Activity
@@ -38,7 +38,8 @@ getActivities <- function(fileName) {
 ## Return a tidy data frame for data in the set
 getData <- function(fileName) {
   
-  featuresFilename <- "UCI HAR Dataset/features.txt"
+  ## Get features from file specified in the OS indepedent file path
+  featuresFilename <- file.path("UCI HAR Dataset", "features.txt")
   featureTable <- read.table(featuresFilename)
   names(featureTable) <- c("FeatureIndex", "Feature")
   features <- featureTable$Feature
@@ -115,15 +116,15 @@ averageTidy <- function(mergedDF) {
 
 main <- function(){
   
-  ## Files in the Training Set
-  trainSubjectsFilename <- "UCI HAR Dataset/train/subject_train.txt"
-  trainLabelsFilename <- "UCI HAR Dataset/train/y_train.txt"
-  trainDataFilename <- "UCI HAR Dataset/train/X_train.txt"
+  ## Files in the Training Set - specified using file.path() so will work on different operating systems
+  trainSubjectsFilename <- file.path("UCI HAR Dataset", "train", "subject_train.txt")
+  trainLabelsFilename <- file.path("UCI HAR Dataset", "train", "y_train.txt")
+  trainDataFilename <- file.path("UCI HAR Dataset", "train", "X_train.txt")
   
-  ## Files in the Test Set
-  testSubjectsFilename <- "UCI HAR Dataset/test/subject_test.txt"
-  testLabelsFilename <- "UCI HAR Dataset/test/y_test.txt"
-  testDataFilename <- "UCI HAR Dataset/test/X_test.txt"
+  ## Files in the Test Set - specified using file.path() so will work on different operating systems
+  testSubjectsFilename <- file.path("UCI HAR Dataset", "test", "subject_test.txt")
+  testLabelsFilename <- file.path("UCI HAR Dataset", "test", "y_test.txt")
+  testDataFilename <- file.path("UCI HAR Dataset", "test", "X_test.txt")
   
   ## Output csv filnames
   tidyMergedFilename <- "tidyMerged.csv"
