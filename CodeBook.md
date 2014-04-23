@@ -1,8 +1,10 @@
 ## Codebook for the Getting and Cleaning Data Assignment
+|                |                                                          |
+|----------------|----------------------------------------------------------|
 |**Author:**     | Brian von Konsky
 |**Created:**    | April 2013
 |**Course:**     | Getting and Cleaning Data
-|**Repository:** |  [https://github.com/bvonkonsky/GettingAndCleaningData](https://github.com/bvonkonsky/GettingAndCleaningData)
+|**Repository:** | [https://github.com/bvonkonsky/GettingAndCleaningData](https://github.com/bvonkonsky/GettingAndCleaningData)
 
 The [original data](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip) for this data cleaning assignment were measured in a study conducted by Jorge L. Reyes-Ortiz, Alessandro Ghio, Luca Oneto, and Davide Anguita.  More information about the data and the study that produced it is available on the [UCI Machine Learning Repository](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones).
 
