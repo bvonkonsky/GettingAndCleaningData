@@ -39,7 +39,7 @@ To use [run_analysis.R](https://github.com/bvonkonsky/GettingAndCleaningData/blo
 
 The sequence of R commands in steps 4 through 7 are shown below.
  
-![Running run_analysis.R in RStudio](https://www.dropbox.com/s/30dhwvvdrssqsu9/run_analysis.jpg)
+![Running the script RStudio](https://github.com/bvonkonsky/GettingAndCleaningData/raw/master/_Fig1.png)
 
 ####Functions
 * **main <- function()** </br> Creates two tidy [data frames](http://stat.ethz.ch/R-manual/R-devel/library/base/html/data.frame.html) for the training and test data and then merges these into a single [data frame](http://stat.ethz.ch/R-manual/R-devel/library/base/html/data.frame.html). The merged data frame is written to a CSV file called **tidyMerged.csv**. The merged data frame is then averaged by activity for each subject, which is written to a second CSV file called **tidyMerged.csv**.  Paths to the files in the original dataset are hardcoded into the script. It should not necessary to change these if the **UCI HAR Dataset** sub-directory containing the original data and [run_analysis.R](https://github.com/bvonkonsky/GettingAndCleaningData/blob/master/run_analysis.R) are both in the current working directory.
