@@ -36,7 +36,7 @@ To use [run_analysis.R](https://github.com/bvonkonsky/GettingAndCleaningData/blo
 4. Run [R Studio](https://www.rstudio.com/).
 5. Use **setwd("\<project directory\>")** to set the working directory to your project directory.
 6. Use **list.files()** to verify that the [run_analysis.R](https://github.com/bvonkonsky/GettingAndCleaningData/blob/master/run_analysis.R) script and the **UCI HAR Dataset** are both in the current working directory.
-7. Use **source("run_analysis.R")** to run the script, which will create two files called **tidyMerged.csv** and **tidyAveraged.csv** in the current working directory. The original dataset is large, so please be patient. The script takes around 49 seconds to run on a 2.8 GHz Intel Core 2 Duo iMac running Mac OS X 10.8.5.
+7. Use **source("run_analysis.R")** to run the script, which will create two files called **tidyMerged.csv** and **tidyAveraged.csv** in the current working directory. The original dataset is large, so please be patient. The script takes around 25 seconds to run on a 2.8 GHz Intel Core 2 Duo iMac running Mac OS X 10.8.5.
 
 The sequence of R commands in steps 4 through 7 are shown below.
  

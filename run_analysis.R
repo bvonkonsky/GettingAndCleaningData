@@ -4,6 +4,7 @@
 
 ## Get a list of valid activity labels
 getActivityLabels <- function() {
+  
   ## OS independent path to file mapping of label IDs to labels
   labelFilename <- file.path("UCI HAR Dataset", "activity_labels.txt")
   labels <- read.table(labelFilename)
@@ -47,12 +48,12 @@ getData <- function(fileName) {
   ## Read the raw data and set the names for each attribute
   data <- read.table(fileName)
   names(data) <- features
-
+  
   ## Keep rows that end in mean() or std() and drop the others
   rexpr <- "(mean|std)\\(\\)$"
   keep <- grepl(rexpr, features)
   data <- data[keep]
-
+  
   ## Clean the attribute names to make them more readable
   theNames <- names(data)
   theNames <- sub("\\(\\)$","", theNames)          ## Get rid of the training pair of parenthesis
@@ -60,7 +61,7 @@ getData <- function(fileName) {
   theNames <- sub("Acc", "Acceleration", theNames) ## Change Acc to Acceleration
   theNames <- sub("std", "stddev", theNames)       ## Change std to stddev
   names(data) <- sub("\\(\\)$","", theNames)
-
+  
   return(data)
 }
 
@@ -71,7 +72,7 @@ getAndClean <- function(subjectsFilename, labelsFilename, dataFilename) {
   subjectIDs <- getSubjectIDs(subjectsFilename)
   activities <- getActivities(labelsFilename)
   data <- getData(dataFilename)
-
+  
   ## Combine all parts of the data frame for this set
   df <- data.frame(subjectIDs, activities, data)
   return (df)
@@ -80,38 +81,10 @@ getAndClean <- function(subjectsFilename, labelsFilename, dataFilename) {
 ## Average the data each measurement in the merged data frame for each subject by activity
 averageTidy <- function(mergedDF) {
   
-  # Get sorted list of all subjects and attribute name contained in the merged data frame
-  subjectID <- sort(unique(mergedDF$SubjectID))
-  theNames <- names(mergedDF)
-
-  # Get the labels used to describe activities
-  activityLabels <- as.character(sort(getActivityLabels()))
-  
-  # Build a table with an appropriate number of rows and columns to hold averaged
-  # data for each attribute for each stubject and activity
-  numCols <- length(theNames)
-  numRows<- length(subjectID) * length(activityLabels)
-  table <- array(dim=c(numRows, numCols))
-  
-  # Build a table with averages for all measurements for each subject and activity 
-  for(id in 1:length(subjectID)) {
-    for (a in 1:length(activityLabels)) {
-      row <- (id-1)*length(activityLabels) + a
-      table[row,1] <- id
-      table[row,2] <- activityLabels[a]
-      theData <- mergedDF[which(mergedDF$SubjectID==id & mergedDF$Activity==activityLabels[a]),]
-      for (c in 3:numCols) {
-        table[row,c] <- mean(theData[,c])
-      }
-    }
-  }
-  
-  # Create a data frame with averaged data contained in the table
-  # using the same column names as in the merged data frame
-  df <- data.frame(table, stringsAsFactors =FALSE, check.names=FALSE, check.rows=FALSE)
-  names(df) <- theNames
-
-  return(df)
+  ## Aggregate the data using the mean function on factor variables for SubjectID and Activity, and use the same column names
+  averagedDF <- aggregate(data.matrix(mergedDF[3:ncol(mergedDF)]) ~ mergedDF$SubjectID + mergedDF$Activity, mergedDF, mean)
+  names(averagedDF) <- names (mergedDF)
+  return (averagedDF)
 }
 
 main <- function(){
