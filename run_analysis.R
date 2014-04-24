@@ -78,7 +78,7 @@ getAndClean <- function(subjectsFilename, labelsFilename, dataFilename) {
   return (df)
 }
 
-## Average the data each measurement in the merged data frame for each subject by activity
+## Average the data for each measurement in the merged data frame for each combination of subject and activity
 averageTidy <- function(mergedDF) {
   
   ## Aggregate the data using the mean function on factor variables for SubjectID and Activity, and use the same column names
@@ -111,8 +111,8 @@ main <- function(){
   mergedDF <- merge(trainDF, testDF, all=TRUE, sort=FALSE)
   write.csv(mergedDF, tidyMergedFilename, row.names=FALSE)
   
-  ## Compute the average for each variable by subject ID and activity and
-  ## write it out as a CSV file
+  ## Compute the average for each variable by subject ID and activity
+  ## and write it out as a CSV file
   averagedDF <- averageTidy(mergedDF)
   write.csv(averagedDF, tidyAveragedFilename, row.names=FALSE)
 }
