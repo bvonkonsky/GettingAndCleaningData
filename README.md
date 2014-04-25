@@ -36,9 +36,6 @@ To use [run_analysis.R](https://github.com/bvonkonsky/GettingAndCleaningData/blo
 4. Use **setwd("\<project directory\>")** to set the working directory to your project directory.
 5. Use **source("run_analysis.R")** to run the script, which will create two files called **tidyMerged.csv** and **tidyAveraged.csv** in the current working directory. The original dataset is large, so please be patient. The script takes around 25 seconds to run on a 2.8 GHz Intel Core 2 Duo iMac running Mac OS X 10.8.5.
 
-The sequence of R commands in steps 4 through 5 are shown below.
- 
-![Running the script RStudio](https://github.com/bvonkonsky/GettingAndCleaningData/raw/master/_Fig1.png)
 
 ####Functions
 
