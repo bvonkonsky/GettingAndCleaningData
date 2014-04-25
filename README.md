@@ -48,7 +48,7 @@ Functions in [run_analysis.R](https://github.com/bvonkonsky/GettingAndCleaningDa
 * **getSubjectIDs() <- function(fileName)** </br> Returns a list of SubjectIDs for each observation in the set.
 * **getActivityLabels() <- function(filename)** </br> Returns an ordered list of sequential activity labels for use as a lookup table in other functions.
 * **averageTidy <- function(mergedDF)** </br> Averages the data for each measurement in mergedDF for each combination of subject and activity.  Uses aggregate() to quickly compute means.
-* **downloadData() <- function()** </br> Checks to see if a subdirectory with the original data exists in the current working directory. If not, the function downloads and unzips the original data in the current working directory.
+* **downloadData() <- function()** </br> Checks to see if a subdirectory with the original data exists in the current working directory. If not, the function downloads and unzips the original data.
 
 ####Potential Modifications
 Feature names contain a leading **t** to designate that the variable is in the **time domain** and **f** to denote that it is in the **frequency domain**. These could be expanded if desired, although this was not done in this case to avoid variable names becoming too long and unwieldly.
