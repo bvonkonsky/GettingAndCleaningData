@@ -50,7 +50,6 @@ getData <- function(fileName) {
   names(data) <- features
   
   ## Keep rows that end in mean() or std() and drop the others
-  rexpr <- "(mean|std)\\(\\)$"
   rexpr <- "(mean|std)\\(\\)"
   keep <- grepl(rexpr, features)
   data <- data[keep]
