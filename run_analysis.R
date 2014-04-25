@@ -51,16 +51,19 @@ getData <- function(fileName) {
   
   ## Keep rows that end in mean() or std() and drop the others
   rexpr <- "(mean|std)\\(\\)$"
+  rexpr <- "(mean|std)\\(\\)"
   keep <- grepl(rexpr, features)
   data <- data[keep]
   
   ## Clean the attribute names to make them more readable
   theNames <- names(data)
-  theNames <- sub("\\(\\)$","", theNames)          ## Get rid of the training pair of parenthesis
-  theNames <- sub("Mag", "Magnitude", theNames)    ## Change Mag to Magnitude
-  theNames <- sub("Acc", "Acceleration", theNames) ## Change Acc to Acceleration
-  theNames <- sub("std", "stddev", theNames)       ## Change std to stddev
-  names(data) <- sub("\\(\\)$","", theNames)
+  theNames <- gsub("\\(\\)","", theNames)                ## Get rid of pairs of parenthesis
+  theNames <- gsub("Mag", "Magnitude", theNames)         ## Change Mag to Magnitude
+  theNames <- gsub("Acc", "Acceleration", theNames)      ## Change Acc to Acceleration
+  theNames <- gsub("std", "StandardDeviation", theNames) ## Change std to StandardDeviation
+  theNames <- gsub("mean", "Mean", theNames)             ## Change mean to Mean
+  theNames <- gsub("[-.]", "", theNames)                 ## Remove dots and hyphens
+  names(data) <- theNames
   
   return(data)
 }

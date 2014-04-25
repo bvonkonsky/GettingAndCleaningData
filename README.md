@@ -20,7 +20,7 @@ The original data format stored test and training data in different sub-director
 The script [run_analysis.R](https://github.com/bvonkonsky/GettingAndCleaningData/blob/master/run_analysis.R):
 * merges the training and test data by Subject ID for a given Activity;
 * retains mean and standard deviation attributes, assumed to be those attributes that originally ended in **mean()** and **std()**, and drops other attributes;
-* makes attribute names arguably more readable by removing parentheses and changing abbreviations like **Mag** to **Magnitude** and **Acc** to **Acceleration**;
+* makes attribute names arguably more readable by changing abbreviations like **Mag** to **Magnitude**, **Acc** to **Acceleration**, and **std** to **StandardDeviation**, and removing parentheses, dots, and hyphens;
 * adds columns identifying the subject by **SubjectID** and **Activity**, where activity is shown as a human readable string rather than as an integer.
 * generates a tidy dataset of the merged data in [Comma Separated Values (CSV)](http://en.wikipedia.org/wiki/Comma-separated_values) format in a file called **tidyMerged.csv**; and
 * generates a second tidy dataset in CSV format that contains the average of reported attributes by subject in a file called **tidyAveraged.csv**.
@@ -34,7 +34,7 @@ To use [run_analysis.R](https://github.com/bvonkonsky/GettingAndCleaningData/blo
 2. Obtain a copy of [run_analysis.R](https://github.com/bvonkonsky/GettingAndCleaningData/blob/master/run_analysis.R) from [Github](https://github.com/) and store it in your project directory.
 3. Run [R Studio](https://www.rstudio.com/).
 4. Use **setwd("\<project directory\>")** to set the working directory to your project directory.
-5. Use **source("run_analysis.R")** to run the script. If necessary, the script will download and unzip the original data into the current working directory. The original dataset is large, so please be patient. Not including the initial download and unzip, the script takes around 25 seconds to run on a 2.8 GHz Intel Core 2 Duo iMac running Mac OS X 10.8.5.
+5. Use **source("run_analysis.R")** to run the script. If necessary, the script will download and unzip the original data into the current working directory. The original dataset is large, so please be patient. Not including the initial download and unzip, the script takes around 30 seconds to run on a 2.8 GHz Intel Core 2 Duo iMac running Mac OS X 10.8.5.
 
 
 ####Functions
@@ -51,7 +51,7 @@ Functions in [run_analysis.R](https://github.com/bvonkonsky/GettingAndCleaningDa
 * **downloadData() <- function()** </br> Checks to see if a subdirectory with the original data exists in the current working directory. If not, the function downloads and unzips the original data.
 
 ####Potential Modifications
-Feature names contain a leading **t** to designate that the variable is in the **time domain** and **f** to denote that it is in the **frequency domain**. These could be expanded if desired, although this was not done in this case to avoid variable names becoming too long and unwieldly.
+Feature names contain a leading **t** to designate that the variable is in the **time domain** and **f** to denote that it is in the **frequency domain**. These could be expanded if desired, although this was not done in this case to avoid variable names becoming event longer and more unwieldly.
 
 ### References
 Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. Human Activity Recognition on Smartphones using a Multiclass Hardware-Friendly Support Vector Machine. _International Workshop of Ambient Assisted Living (IWAAL 2012)_. Vitoria-Gasteiz, Spain. Dec 2012.
