@@ -32,13 +32,11 @@ To use [run_analysis.R](https://github.com/bvonkonsky/GettingAndCleaningData/blo
 
 1. Download and install [R](http://www.r-project.org/) and [R Studio](https://www.rstudio.com/).
 2. Obtain a copy of [run_analysis.R](https://github.com/bvonkonsky/GettingAndCleaningData/blob/master/run_analysis.R) from [Github](https://github.com/) and store it in your project directory.
-3. Download the [original data](http://archive.ics.uci.edu/ml/machine-learning-databases/00240/) and unzip it into the project directory containing [run_analysis.R](https://github.com/bvonkonsky/GettingAndCleaningData/blob/master/run_analysis.R). The project data should then be a sub-directory called *UCI HAR Dataset*.
-4. Run [R Studio](https://www.rstudio.com/).
-5. Use **setwd("\<project directory\>")** to set the working directory to your project directory.
-6. Use **list.files()** to verify that the [run_analysis.R](https://github.com/bvonkonsky/GettingAndCleaningData/blob/master/run_analysis.R) script and the **UCI HAR Dataset** are both in the current working directory.
-7. Use **source("run_analysis.R")** to run the script, which will create two files called **tidyMerged.csv** and **tidyAveraged.csv** in the current working directory. The original dataset is large, so please be patient. The script takes around 25 seconds to run on a 2.8 GHz Intel Core 2 Duo iMac running Mac OS X 10.8.5.
+3. Run [R Studio](https://www.rstudio.com/).
+4. Use **setwd("\<project directory\>")** to set the working directory to your project directory.
+5. Use **source("run_analysis.R")** to run the script, which will create two files called **tidyMerged.csv** and **tidyAveraged.csv** in the current working directory. The original dataset is large, so please be patient. The script takes around 25 seconds to run on a 2.8 GHz Intel Core 2 Duo iMac running Mac OS X 10.8.5.
 
-The sequence of R commands in steps 4 through 7 are shown below.
+The sequence of R commands in steps 4 through 5 are shown below.
  
 ![Running the script RStudio](https://github.com/bvonkonsky/GettingAndCleaningData/raw/master/_Fig1.png)
 
