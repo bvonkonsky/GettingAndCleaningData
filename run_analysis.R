@@ -87,6 +87,23 @@ averageTidy <- function(mergedDF) {
   return (averagedDF)
 }
 
+#if the subdirectory wiht the original doesn't exist, download and unzip it
+downloadData <- function() {
+  ## Set file names
+  original <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
+  local    <- "data.zip"
+  directory<- "UCI HAR Dataset"
+  
+  ## If the file doesn't exist, then get tt
+  if (!file.exists(directory)) {
+    
+    ## Download and unzip
+    download.file(original,local, method="curl" )
+    unzip(local)
+  }
+
+}
+
 main <- function(){
   
   ## Files in the Training Set - specified using file.path() so will work on different operating systems
@@ -102,6 +119,9 @@ main <- function(){
   ## Output csv filnames
   tidyMergedFilename <- "tidyMerged.csv"
   tidyAveragedFilename<- "tidyAveraged.csv"
+  
+  # Download the data if necessary
+  downloadData()
   
   # Build complete tidy data frames for both the training and test data sets
   trainDF <- getAndClean(trainSubjectsFilename, trainLabelsFilename, trainDataFilename)
