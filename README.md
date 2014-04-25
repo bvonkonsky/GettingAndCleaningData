@@ -43,12 +43,17 @@ The sequence of R commands in steps 4 through 7 are shown below.
 ![Running the script RStudio](https://github.com/bvonkonsky/GettingAndCleaningData/raw/master/_Fig1.png)
 
 ####Functions
-* **main <- function()** </br> Creates two tidy [data frames](http://stat.ethz.ch/R-manual/R-devel/library/base/html/data.frame.html) for the training and test data and then merges these into a single [data frame](http://stat.ethz.ch/R-manual/R-devel/library/base/html/data.frame.html). The merged data frame is written to a CSV file called **tidyMerged.csv**. The merged data frame is then averaged by activity for each subject, which is written to a second CSV file called **tidyMerged.csv**.  Paths to the files in the original dataset are hardcoded into the script. It should not necessary to change these if the **UCI HAR Dataset** sub-directory containing the original data and [run_analysis.R](https://github.com/bvonkonsky/GettingAndCleaningData/blob/master/run_analysis.R) are both in the current working directory.
-* **getAndClean <- function(subjectsFilename, labelsFilename, dataFilename)** </br> Recovers raw data, subject ID numbers,and activities from the three files used to store this information in the original data and combines them into a single [data frame](http://stat.ethz.ch/R-manual/R-devel/library/base/html/data.frame.html).
+
+Functions in [run_analysis.R](https://github.com/bvonkonsky/GettingAndCleaningData/blob/master/run_analysis.R) are listed below.
+
+* **main <- function()** </br> Creates two tidy [data frames](http://stat.ethz.ch/R-manual/R-devel/library/base/html/data.frame.html) for the training and test data and then merges these into a single [data frame](http://stat.ethz.ch/R-manual/R-devel/library/base/html/data.frame.html). The merged data frame is written to a CSV file called **tidyMerged.csv**. The merged data frame is then averaged by activity for each subject, which is written to a second CSV file called **tidyAveraged.csv**.  Paths to  files and directories in the original data are coded to work on all operating systems supported by R using the file.path() function.  
+* **getAndClean <- function(subjectsFilename, labelsFilename, dataFilename)** </br> Recovers raw data, subject ID numbers, and activities from the three files used to store information from one of the two original data sets (either test or training) and combines data for that set into a single tidy [data frame](http://stat.ethz.ch/R-manual/R-devel/library/base/html/data.frame.html).
 * **getData() <- function(fileName)** </br> Gets the feature set and the raw data. Keep rows that end in **mean()** or **std()**, and edit the remaining headers to make them more readable.
-* **getActivities() <- function(fileName)** </br> Read the activity ID for each observation and convert this from an integer to a meaningful English verb (e.g. WALKING, STANDING).
+* **getActivities() <- function(fileName)** </br> Read the activity ID for each observation and convert this  to a meaningful English verb (e.g. WALKING, STANDING).
 * **getSubjectIDs() <- function(fileName)** </br> Returns a list of SubjectIDs for each observation in the set.
 * **getActivityLabels() <- function(filename)** </br> Returns an ordered list of sequential activities for use as a lookup table in other functions.
+* **averageTidy <- function(mergedDF)** </br> Averages the data for each measurement in mergedDF for each combination of subject and activity.  Uses aggregate() to quickly compute means.
+* **downloadData() <- function()** </br> Checks to see if a subdirectory with the original data exists in the current working directory. If not, the function downloads and unzips the original data.
 
 ####Potential Modifications
 Variable names contain a leading **t** to designate that the variable is in the **time domain** and *f* to denote that it is in the **frequency domain**. These could be expanded if desired, although this was not done in this case to avoid variable names becoming too long and unwieldly.
