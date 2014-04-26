@@ -19,11 +19,11 @@ The original data format stored test and training data in different sub-director
 ####Tidy Data Produced by run_analysis.R
 The script [run_analysis.R](https://github.com/bvonkonsky/GettingAndCleaningData/blob/master/run_analysis.R):
 * merges the training and test data by Subject ID for a given Activity;
-* retains mean and standard deviation attributes, assumed to be those attributes that originally ended in **mean()** and **std()**, and drops other attributes;
+* retains mean and standard deviation attributes, assumed to be those attributes that contain **mean** or **std** anywhere in the attribute name, and drops others;
 * makes attribute names arguably more readable by changing abbreviations like **Mag** to **Magnitude**, **Acc** to **Acceleration**, and **std** to **StandardDeviation**, and removing parentheses, dots, and hyphens;
 * adds columns identifying the subject by **SubjectID** and **Activity**, where activity is shown as a human readable string rather than as an integer.
 * generates a tidy dataset of the merged data in [Comma Separated Values (CSV)](http://en.wikipedia.org/wiki/Comma-separated_values) format in a file called **tidyMerged.csv**; and
-* generates a second tidy dataset in CSV format that contains the average of reported attributes by subject in a file called **tidyAveraged.csv**.
+* generates a second tidy dataset in CSV format that contains the average of reported attributes by subject and activity in a file called **tidyAveraged.csv**.
 
 **See Also:** [CodeBook.md](https://github.com/bvonkonsky/GettingAndCleaningData/blob/master/CodeBook.md)
 
@@ -33,7 +33,7 @@ To use [run_analysis.R](https://github.com/bvonkonsky/GettingAndCleaningData/blo
 1. Download and install [R](http://www.r-project.org/) and [R Studio](https://www.rstudio.com/).
 2. Obtain a copy of [run_analysis.R](https://github.com/bvonkonsky/GettingAndCleaningData/blob/master/run_analysis.R) from [Github](https://github.com/) and store it in your project directory.
 3. Run [R Studio](https://www.rstudio.com/).
-4. Use **setwd("\<project directory\>")** to set the working directory to your project directory.
+4. Use **setwd("\<project directory\>")** to set the working directory to your project directory containing the [run_analysis.R](https://github.com/bvonkonsky/GettingAndCleaningData/blob/master/run_analysis.R) script.
 5. Use **source("run_analysis.R")** to run the script. If necessary, the script will download and unzip the original data into the current working directory. The original dataset is large, so please be patient. Not including the initial download and unzip, the script takes around 30 seconds to run on a 2.3 GHz Intel Core i7 iMac running Mac OS X 10.9.2.
 
 
@@ -43,7 +43,7 @@ Functions in [run_analysis.R](https://github.com/bvonkonsky/GettingAndCleaningDa
 
 * **main <- function()** </br> Creates two tidy [data frames](http://stat.ethz.ch/R-manual/R-devel/library/base/html/data.frame.html) for the training and test data and then merges these into a single [data frame](http://stat.ethz.ch/R-manual/R-devel/library/base/html/data.frame.html). The merged data frame is written to a CSV file called **tidyMerged.csv**. The merged data frame is then averaged by activity for each subject, and written to a second CSV file called **tidyAveraged.csv**.  Paths to  files and directories in the original data are coded to work on all operating systems supported by R using the file.path() function.  
 * **getAndClean <- function(subjectsFilename, labelsFilename, dataFilename)** </br> Recovers raw data, subject ID numbers, and activities from the three files used to store information from one of the two original data sets (either test or training) and combines data for that set into a single tidy [data frame](http://stat.ethz.ch/R-manual/R-devel/library/base/html/data.frame.html).
-* **getData() <- function(fileName)** </br> Gets the feature set and the raw data. Keep rows that end in **mean()** or **std()**, and edit the remaining headers to make them more readable.
+* **getData() <- function(fileName)** </br> Gets the feature set and the raw data. Keep columns with attribute names that contain **mean** or **std**, and edit these names to make them more readable. Drop those column names that did not originally contain **mean** or **std**.
 * **getActivities() <- function(fileName)** </br> Read the Activity ID for each observation and convert this  to a meaningful English verb (e.g. WALKING, STANDING).
 * **getSubjectIDs() <- function(fileName)** </br> Returns a list of SubjectIDs for each observation in the set.
 * **getActivityLabels() <- function(filename)** </br> Returns an ordered list of sequential activity labels for use as a lookup table in other functions.

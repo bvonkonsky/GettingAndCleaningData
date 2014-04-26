@@ -14,13 +14,13 @@ Papers arising from the original or cleaned data should reference:
 
 The original data were downloaded and subsequently cleaned using an [R script](http://www.r-project.org/) called [run_analysis.R](https://github.com/bvonkonsky/GettingAndCleaningData/blob/master/run_analysis.R).
 
-The cleaned version merges the training and test data from the original study, and uses arguably more meaningful variable names. The mapping from original to modified variable names are shown in the table below.  Occurrences of **Mag** were changed to **Magnitude**, **Acc** to **Accelerate**, **std** to **StadardDeviation** and **mean** to **Mean**. All parentheses, dots and hyphens were removed. The **t** prefixes for **time** and **f** prefixes for **frequency domain** at the beginning of variable names were retained to avoid making names more unwieldy. A small modification to the script could easily expand this if desired.  
+The cleaned version merges the training and test data from the original study, and uses arguably more meaningful variable names. The mapping from original to modified variable names is shown in the table below.  Occurrences of **Mag** were changed to **Magnitude**, **Acc** to **Accelerate**, **std** to **StadardDeviation** and **mean** to **Mean**. All parentheses, dots and hyphens were removed. The **t** prefixes for **time** and **f** prefixes for **frequency domain** at the beginning of variable names were retained to avoid making names more unwieldy. A small modification to the script could easily expand this if desired.  
 
 The cleaned version of the data only retains original variables that include **mean** or **std**.  Variables that did not contain **mean** or **std** were intentionally dropped from the cleaned data set.
 
 The cleaned version of the data follows the four principles of a Tidy Dataset as described by [Jeff Leek](http://biostat.jhsph.edu/~jleek/) and the Leek Group in their document on [datasharing](https://github.com/jtleek/datasharing). Specifically:
 * each variable is in its own column;
-* each observation is contained in a single row, in this case labeled by subject ID and the activity that the subject was engaged in at the time of the measurement;
+* each observation (or mean of aggregaed observations) is contained in a single row, in this case labeled by subject ID and the activity that the subject was engaged in at the time of the measurement;
 * one table for each kind of measurement, in this case measurements taken using Samsung mobile devices recorded while subjects were engaged in various activities; and
 * multiple tables are readily linked, in this case, by subject ID and activity.
 
