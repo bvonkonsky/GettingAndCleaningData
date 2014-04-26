@@ -34,7 +34,7 @@ To use [run_analysis.R](https://github.com/bvonkonsky/GettingAndCleaningData/blo
 2. Obtain a copy of [run_analysis.R](https://github.com/bvonkonsky/GettingAndCleaningData/blob/master/run_analysis.R) from [Github](https://github.com/) and store it in your project directory.
 3. Run [R Studio](https://www.rstudio.com/).
 4. Use **setwd("\<project directory\>")** to set the working directory to your project directory.
-5. Use **source("run_analysis.R")** to run the script. If necessary, the script will download and unzip the original data into the current working directory. The original dataset is large, so please be patient. Not including the initial download and unzip, the script takes around 30 seconds to run on a 2.8 GHz Intel Core 2 Duo iMac running Mac OS X 10.8.5.
+5. Use **source("run_analysis.R")** to run the script. If necessary, the script will download and unzip the original data into the current working directory. The original dataset is large, so please be patient. Not including the initial download and unzip, the script takes around 30 seconds to run on a 2.3 GHz Intel Core i7 iMac running Mac OS X 10.9.2.
 
 
 ####Functions
