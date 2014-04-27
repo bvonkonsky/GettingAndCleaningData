@@ -89,7 +89,7 @@ averageTidy <- function(mergedDF) {
   return (averagedDF)
 }
 
-#if the subdirectory wiht the original doesn't exist, download and unzip it
+#if the subdirectory wiht the original data doesn't exist, download and unzip it
 downloadData <- function() {
   ## Set file names
   original <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
