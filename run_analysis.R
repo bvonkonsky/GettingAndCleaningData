@@ -44,7 +44,7 @@ getData <- function(fileName) {
   featureTable <- read.table(featuresFilename)
   names(featureTable) <- c("FeatureIndex", "Feature")
   features <- featureTable$Feature
-  
+
   ## Read the raw data and set the names for each attribute
   data <- read.table(fileName)
   names(data) <- features
@@ -63,7 +63,7 @@ getData <- function(fileName) {
   theNames <- gsub("mean", "Mean", theNames)             ## Change mean to Mean
   theNames <- gsub("[-.]", "", theNames)                 ## Remove dots and hyphens
   names(data) <- theNames
-  
+
   return(data)
 }
 
@@ -96,7 +96,7 @@ downloadData <- function() {
   local    <- "data.zip"
   directory<- "UCI HAR Dataset"
   
-  ## If the file doesn't exist, then get tt
+  ## If the directory doesn't exist, then get it
   if (!file.exists(directory)) {
     
     ## Download and unzip
