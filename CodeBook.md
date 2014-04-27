@@ -20,7 +20,7 @@ The cleaned version of the data only retains original variables that include **m
 
 The cleaned version of the data follows the four principles of a Tidy Dataset as described by [Jeff Leek](http://biostat.jhsph.edu/~jleek/) and the Leek Group in their document on [datasharing](https://github.com/jtleek/datasharing). Specifically:
 * each variable is in its own column;
-* each observation in the case of **tidyMerged.csv** or mean of aggregated observations in the case of **tidyAveraged.csv** is contained in a single row, labeled by  subject ID and the activity that the subject was engaged in at the time of the measurement;
+* each observation in the case of **tidyMerged.csv** or mean of aggregated observations in the case of **tidyAveraged.csv** is contained in a single row, labeled by  subject ID and the activity;
 * one table for each kind of measurement, in this case measurements taken using Samsung mobile devices recorded while subjects were engaged in various activities; and
 * multiple tables/csv files are readily linked, in this case, by subject ID and activity.
 
